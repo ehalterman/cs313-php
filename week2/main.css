@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Quicksand:wght@600&display=swap');
+body {
+    max-width: 760px;
+    margin: auto;
+    font-family: 'Quicksand', sans-serif;
+}
+main{
+    text-align: center;
+    background-color:lightblue;
+    padding: 20px;
+    border: peachpuff 5px dashed;
+}
+header{
+    background-color: white;
+}
+h1, h2{
+    font-family: 'Crete Round', serif;
+}
+img {
+    max-width: 250px;
+}
+nav {
+    margin: 0;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+li{
+    display: inline;
+    padding: 10px 0px ;
+}
+a{
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+    margin: 0px;
+
+}
+a:hover{
+    background-color: lightpink;
+    font-weight: bold;
+}
+#current{
+    background-color: peachpuff;
+}
+button{
+    background-color: lightpink;
+    border: peachpuff 5px dashed;
+}
+h2{
+    margin-bottom: 0;
+}
+h2 ~ p{
+    margin-top: 0;
+}
