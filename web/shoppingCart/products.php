@@ -32,8 +32,16 @@ if(isset($_POST['addToCart'])){
     <form action="products.php" method="post">
         <input type="checkbox" id="chocolates" name="cart[]" value="chocolates">
         <label for="chocolates"><img src="images/chocolates.jpg" alt="assorted chocolates">Assorted Chocolates</label>
+        <input type="checkbox" id="citrus" name="cart[]" value="citrus">
+        <label for="citrus"><img src="images/citrus-slices.jpg" alt="gummy citrus slices">Citrus Slices</label>
+        <input type="checkbox" id="eggs" name="cart[]" value="eggs">
+        <label for="eggs"><img src="images/chocolate-eggs.jpg" alt="chocolate eggs">Chocolate Eggs</label>
+        <input type="checkbox" id="bears" name="cart[]" value="bears">
+        <label for="bears"><img src="images/sourbears.jpg" alt="sour gummy bears">Sour Gummy Bears</label>
 
+        <input type="submit" name="submit" value="Add To Cart" id="submit">
     </form>
+        <a href="cart.php">go to cart...</a>
            
 </main>
 <footer>
