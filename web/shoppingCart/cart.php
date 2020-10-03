@@ -22,7 +22,8 @@ session_start();
     </nav>
 </header>
 <main>
-    <?php echo $_SESSION['cart']?>
+    <?php foreach ($_SESSION['cart'] as $item){
+        echo $item + "<br>";}?>
     <p><a href="checkout.php">Check Out</a></p>
 </main>
 <footer>  
