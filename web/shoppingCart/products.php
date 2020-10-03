@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+$_SESSION['cart'] = array();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,13 +25,16 @@ session_start();
 </header>
 <main>
     <h2>Pick Your Candy Here!</h2>
-    <ul>
-        <li>
-            <img src="images/chocolates.jpg" alt="valentines chocolates">
-            Assorted Chocolates <br>
-            Add to Cart: <a>1/2 lb</a><a> 1 lb</a>
-        </li>
-    </ul>
+    <p>Assorted Chocolates</p>
+    <img src="images/chocolates.jpg" alt="valentines chocolates" method="post">
+    <p>Add to Cart:</p>
+        <form action="array_push('Assorted Chocolates 1/2 Pound')">
+            <input type="submit" name="submit" class="cartLink" value="1/2 Pound">
+        </form>
+        <form action="array_push('Assorted Chocolates 1 Pound')">
+            <input type="submit" name="submit" class="cartLink" value="1 Pound">
+        </form>
+           
 </main>
 <footer>
     <p>EH Treats &copy; 2020 | Stansbury Park, Utah</p>    

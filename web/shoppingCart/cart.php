@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +22,7 @@
     </nav>
 </header>
 <main>
-    <p>List of Items</p>
+    <?php echo $_SESSION['cart']?>
     <p><a href="checkout.php">Check Out</a></p>
 </main>
 <footer>  
