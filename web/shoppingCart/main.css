@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
 body {
     background-image: url(images/assorted-cover.jpg);
     text-align: center;
 } 
 main {
     background-color: white;
+}
+h1, h2, h3, h4 {
+    font-family: 'Amatic SC', cursive;
 }
 header {
     background-color: white;
