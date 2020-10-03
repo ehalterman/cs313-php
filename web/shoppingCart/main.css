@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Josefin+Slab:wght@300&display=swap');
 body {
     background-image: url(images/assorted-cover.jpg);
     text-align: center;
     max-width: 760px;
     margin: auto;
+    font-family: 'Josefin Slab', serif;
 } 
 
 h1, h2, h3, h4 {
@@ -38,4 +38,7 @@ header li a:hover {
     background-color: #4c96d7;
     color: #3a3a3a;
     padding: 14px;
+}
+#current {
+    background-color: coral;
 }
