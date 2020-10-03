@@ -7,6 +7,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | EH Treats</title>
+    <link href="main.css" rel="stylesheet">
 </head>
 <body>
 <header>

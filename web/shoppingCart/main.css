@@ -1,0 +1,35 @@
+body {
+    background-image: url(images/assorted-cover.jpg);
+    text-align: center;
+} 
+main {
+    background-color: white;
+}
+header {
+    background-color: white;
+}
+header ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav {
+    align-items: center;
+}
+header ul li {
+    color: white;
+    flex: 1 1 100%;
+    text-decoration: none;
+    padding: 10px; 
+    font-size: 14px;
+}
+header ul li a {
+    color: white;
+    text-decoration: none;
+}
+header li a:hover {
+    background-color: #4c96d7;
+    color: #3a3a3a;
+    padding: 14px;
+}
