@@ -26,8 +26,8 @@ session_start();
     <ul>
         <li>
             <img src="images/chocolates.jpg" alt="valentines chocolates">
-            <p class="candyName">Assorted Chocolates</p>
-            <p class="addToCart">Add to Cart: <a>1/2 lb</a><a> 1 lb</a>
+            Assorted Chocolates <br>
+            Add to Cart: <a>1/2 lb</a><a> 1 lb</a>
         </li>
     </ul>
 </main>
