@@ -19,6 +19,7 @@
 </header>
 <main>
     <form action="confirmation.php" method="post">
+        <input type="submit" name="submit" value="Complete Purchase" id="submit" >
 
 
     </form>
