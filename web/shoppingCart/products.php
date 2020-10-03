@@ -2,6 +2,10 @@
 session_start();
 
 $_SESSION['cart'] = array();
+
+if(isset($_POST['addToCart'])){
+    array_push($_SESSION['cart'], $value);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,15 +29,11 @@ $_SESSION['cart'] = array();
 </header>
 <main>
     <h2>Pick Your Candy Here!</h2>
-    <p>Assorted Chocolates</p>
-    <img src="images/chocolates.jpg" alt="valentines chocolates" method="post">
-    <p>Add to Cart:</p>
-        <form action="array_push('Assorted Chocolates 1/2 Pound')">
-            <input type="submit" name="submit" class="cartLink" value="1/2 Pound">
-        </form>
-        <form action="array_push('Assorted Chocolates 1 Pound')">
-            <input type="submit" name="submit" class="cartLink" value="1 Pound">
-        </form>
+    <form action="products.php" method="post">
+        <input type="checkbox" id="chocolates" name="cart[]" value="chocolates">
+        <label for="chocolates"><img src="images/chocolates.jpg" alt="assorted chocolates">Assorted Chocolates</label>
+
+    </form>
            
 </main>
 <footer>
