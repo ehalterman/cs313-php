@@ -17,8 +17,8 @@
        </nav>
    </header>
    <main>
-       <a src="../team/week3/index.php">Team Week 3</a>
-       <a src="../shoppingCart/index.php">Shopping Cart</a>
+       <a href="../team/week3/index.php">Team Week 3</a>
+       <a href="../shoppingCart/index.php">Shopping Cart</a>
    </main>
 
 </body>
