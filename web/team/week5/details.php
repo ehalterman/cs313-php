@@ -6,7 +6,7 @@
     <title>Team Week 5</title>
 </head>
 <body>
-    <h1>Scripture Resources</h1>
+    <h1>Scripture Details</h1>
     <?php
     try
     {
@@ -29,10 +29,14 @@
       echo 'Error!: ' . $ex->getMessage();
       die();
     }
-    foreach ($db->query('SELECT * FROM Scriptures') as $row)
-    {
-        echo '<p><a href="details.php?action='. $row['id'] . '"><b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b></a></p>';
-    }
+    $id = filter_input(INPUT_GET, 'action');
+    $stmt = $db->query('SELECT * FROM Scriptures WHERE id = :id');
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    echo '<p><b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"</p>';
+    
     ?>
         
 </body>
