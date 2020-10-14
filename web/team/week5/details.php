@@ -33,10 +33,11 @@
     $stmt = $db->query('SELECT * FROM Scriptures WHERE id = :id');
     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
     $stmt->execute();
-    $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
+    foreach($rows as $row){
     echo '<p><b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"</p>';
-    
+    }
     ?>
         
 </body>
