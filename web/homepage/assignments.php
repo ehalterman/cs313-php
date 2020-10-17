@@ -19,6 +19,7 @@
    <main>
        <a href="../team/week3/index.php">Team Week 3</a>
        <a href="../shoppingCart/index.php">Shopping Cart</a>
+       <a href="../EH Web/index.php">Project 1</a>
    </main>
 
 </body>
