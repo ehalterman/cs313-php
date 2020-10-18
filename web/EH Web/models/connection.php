@@ -1,6 +1,6 @@
 <?php
 session_start();
-echo ("file open");
+
 function phpConnection(){
     try
     {
@@ -18,15 +18,13 @@ function phpConnection(){
     
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-      $message = '<p>CONNECTED!!!</p>';
-      $_SESSION['message'] = $message;
+      echo ("file open");
+
     }
     catch (PDOException $ex)
     {
-      $message = 'Error!: ' . $ex->getMessage();
-      $_SESSION['message'] = $message;
+      echo ("failed");
       die();
     }
-    echo $_SESSION['message'];
   }
 ?>
