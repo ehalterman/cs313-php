@@ -9,7 +9,7 @@
     <header>
     <h1>EH Web</h1>
     <div class="login">
-        <p><a href='https://intense-dusk-08315.herokuapp.com/ehWeb/accounts/index.php?action=login-redirect'>Employee Log In</a></p>
+        <p><a href='views/login.php'>Employee Log In</a></p>
     </div>
     <nav>
         <ul>
