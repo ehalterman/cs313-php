@@ -68,7 +68,7 @@ switch($action){
         include '../view/login.php';
         break;
     default:
-        include '../view/admin.php';
+        include '../view/login.php';
 
     }
     ?>
