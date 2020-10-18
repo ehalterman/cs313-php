@@ -25,10 +25,10 @@
             echo $_SESSION['message'];
         }
         ?>    <form>
-        <label for="userName">User Name:</label>
-        <input type="text" id="userName" name="userName" required></br>
-        <label for="userPassword">Password:</label>
-        <input type="password" id="userPassword" name="userPassword">
+        <label for="username">User Name:</label>
+        <input type="text" id="username" name="username" required></br>
+        <label for="userpassword">Password:</label>
+        <input type="password" id="userpassword" name="userpassword">
         <input type="submit" name="submit" id="signin">
         <input type="hidden" name="action" value="login">
     </form>
