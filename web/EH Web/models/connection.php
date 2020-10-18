@@ -27,4 +27,5 @@ function phpConnection(){
       die();
     }
   }
+  phpConnection();
 ?>
