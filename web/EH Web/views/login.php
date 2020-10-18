@@ -20,8 +20,11 @@
     </nav>
     </header>
     <body>
-    <?php //if(isset $message){echo $message}>?>
-    <form>
+    <?php
+        if(isset($_SESSION['message'])) {
+            echo $_SESSION['message'];
+        }
+        ?>    <form>
         <label for="userName">User Name:</label>
         <input type="text" id="userName" name="userName" required></br>
         <label for="userPassword">Password:</label>

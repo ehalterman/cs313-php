@@ -22,7 +22,7 @@ if ($action == NULL){
     $action = filter_input(INPUT_GET, 'action');
 }
 
-switch ($action) {
+switch($action){
     case 'login':
         $userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
         $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
@@ -30,23 +30,25 @@ switch ($action) {
         // Run basic checks, return if errors
         if (empty($userName) || empty($userPassword)) {
         $message = '<p class="notice">Please provide a valid username and password.</p>';
+        $_SESSION['message'] = $message;
         include '../view/login.php';
         exit;
         }
         
         // A valid password exists, proceed with the login process
         // Query the client data based on the email address
-        $clientData = getClient($userID);
+        $clientData = getClient($userId);
         // Compare the password just submitted against
         // the hashed password for the matching client
-        setcookie('userId', $clientData['userId'], strtotime('+1 year'), '/');
-        $cookieUserId = $clientData['userId'];
+        setcookie('userName', $clientData['userName'], strtotime('+1 year'), '/');
+        $cookieUserName = $clientData['userName'];
 
         $hashCheck = password_verify($userPassword, $clientData['userPassword']);
         // If the hashes don't match create an error
         // and return to the login view
         if(!$hashCheck) {
         $message = '<p class="notice">Please check your password and try again.</p>';
+        $_SESSION['message'] = $message;
         include '../view/login.php';
         // exit;
         // }
@@ -63,6 +65,5 @@ switch ($action) {
         exit;
         break;
     default:
-        include '../view/login.php';
-}
-    ?>
+    break;
+    }?>
