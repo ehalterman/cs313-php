@@ -50,8 +50,8 @@ switch($action){
         $message = '<p class="notice">Please check your password and try again.</p>';
         $_SESSION['message'] = $message;
         include '../view/login.php';
-        // exit;
-        // }
+        exit;
+        }
         // A valid user exists, log them in
         $_SESSION['loggedin'] = TRUE;
         // Remove the password from the array
