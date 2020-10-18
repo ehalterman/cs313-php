@@ -42,12 +42,12 @@ switch ($action) {
         setcookie('userId', $clientData['userId'], strtotime('+1 year'), '/');
         $cookieUserId = $clientData['userId'];
 
-        //$hashCheck = password_verify($clientPassword, $clientData['clientPassword']);
+        $hashCheck = password_verify($userPassword, $clientData['userPassword']);
         // If the hashes don't match create an error
         // and return to the login view
-        // if(!$hashCheck) {
-        // $message = '<p class="notice">Please check your password and try again.</p>';
-        // include '../view/login.php';
+        if(!$hashCheck) {
+        $message = '<p class="notice">Please check your password and try again.</p>';
+        include '../view/login.php';
         // exit;
         // }
         // A valid user exists, log them in
@@ -63,6 +63,6 @@ switch ($action) {
         exit;
         break;
     default:
-    include '../view/login.php';
+        include '../view/login.php';
 }
     ?>
