@@ -2,11 +2,11 @@
 
 require_once '../models/connection.php';
 
-function getClient($userId){
+function getClient($userName){
     $db = phpConnection();
-    $sql = 'SELECT * FROM siteUser WHERE userId = :userId';
+    $sql = 'SELECT * FROM siteUser WHERE userName = :userName';
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':userId', $userId, PDO::PARAM_STR);
+    $stmt->bindValue(':userName', $userName, PDO::PARAM_STR);
     $stmt->execute();
     $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
