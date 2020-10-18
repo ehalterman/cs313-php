@@ -12,7 +12,7 @@ require_once '../models/accounts-model.php';
 //require_once '../library/functions.php';
 
 
-if(isset($_COOKIE['userID'])){
+if(isset($_COOKIE['userId'])){
      $cookieUserId = filter_input(INPUT_COOKIE, 'userId', FILTER_SANITIZE_STRING);
     }
 

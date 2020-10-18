@@ -18,8 +18,6 @@ function phpConnection(){
     
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-      echo ("file open");
-
     }
     catch (PDOException $ex)
     {
@@ -27,5 +25,4 @@ function phpConnection(){
       die();
     }
   }
-  phpConnection();
 ?>
