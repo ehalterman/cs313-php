@@ -25,9 +25,9 @@ if ($action == NULL){
 switch($action){
     case 'viewClient':
         getClient();
-        include '../views/clients.php';
+        include 'clients.php';
     break;
     default:
-        include '../views/clients.php';
+        include 'clients.php';
 }
 ?>

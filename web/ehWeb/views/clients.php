@@ -21,7 +21,11 @@
     </nav>
     </header>
     <body>
-        
+        <?php 
+        foreach ($clientData as $clientsData){
+            echo ('<p>'.$clientsData['firstname']);
+        }
+        ?>
     </body>
     <footer>
     </footer>
