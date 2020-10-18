@@ -26,6 +26,6 @@ function phpConnection(){
       $_SESSION['message'] = $message;
       die();
     }
-    
+    echo $_SESSION['message'];
   }
 ?>
