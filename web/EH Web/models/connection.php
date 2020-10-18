@@ -1,5 +1,6 @@
 <?php
 session_start();
+echo ("file open");
 function phpConnection(){
     try
     {
