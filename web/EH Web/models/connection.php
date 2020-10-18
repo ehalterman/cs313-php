@@ -1,4 +1,5 @@
 <?php
+function phpConnection(){
     try
     {
       $dbUrl = getenv('DATABASE_URL');
@@ -20,8 +21,6 @@
       echo 'Error!: ' . $ex->getMessage();
       die();
     }
-    $userId = filter_input(INPUT_GET, 'action');
-    $stmt = $db->query('SELECT * FROM siteUser WHERE userId = :userId');
-    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-    $stmt->execute();
+    
+  }
 ?>
