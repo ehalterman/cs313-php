@@ -9,11 +9,12 @@
     <header>
     <h1>EH Web</h1>
     <div class="login">
-        <p><a href='https://intense-dusk-08315.herokuapp.com/EH%20Web/accounts/index.php?action=login-redirect'>Employee Log In</a></p>
+        <p><a href='https://intense-dusk-08315.herokuapp.com/ehWeb/accounts/index.php?action=login-redirect'>Employee Log In</a></p>
     </div>
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
+            <li><a href="https://intense-dusk-08315.herokuapp.com/ehWeb/clients/index.php?action=clientView'">Clients</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
         </ul>

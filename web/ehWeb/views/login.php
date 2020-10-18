@@ -14,6 +14,7 @@
     <nav>
         <ul>
             <li><a href="../index.php">Home</a></li>
+            <li><a href="clients.php">Clients</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
         </ul>

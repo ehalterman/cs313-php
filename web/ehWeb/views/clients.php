@@ -8,12 +8,12 @@
 <body>
     <header>
     <h1>EH Web</h1>
-    <div class="logOut">
-        <p><a href="#">Log Out</a></p>
+    <div class="login">
+        <p><a href='https://intense-dusk-08315.herokuapp.com/EH%20Web/accounts/index.php?action=login-redirect'>Employee Log In</a></p>
     </div>
     <nav>
         <ul>
-            <li><a href="../index.php">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="clients.php">Clients</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
@@ -21,8 +21,7 @@
     </nav>
     </header>
     <body>
-    <p> Successful Login</p>
-    <?php echo($_SESSION['clientData']('userId'))?>
+        
     </body>
     <footer>
     </footer>

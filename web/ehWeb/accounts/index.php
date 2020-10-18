@@ -37,7 +37,7 @@ switch($action){
         
         // A valid password exists, proceed with the login process
         // Query the client data based on the email address
-        $clientData = getClient($username);
+        $clientData = getUser($username);
         // Compare the password just submitted against
         // the hashed password for the matching client
         setcookie('username', $clientData['username'], strtotime('+1 year'), '/');
