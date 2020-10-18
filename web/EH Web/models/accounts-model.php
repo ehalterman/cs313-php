@@ -1,6 +1,6 @@
 <?php
 
-require_once '../models/connection.php';
+require_once 'connection.php';
 
 function getClient($userName){
     $db = phpConnection();
