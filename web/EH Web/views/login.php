@@ -9,7 +9,7 @@
     <header>
     <h1>EH Web</h1>
     <div class="login">
-        <p><a href="views/login.php">Employee Log In</a></p>
+        <p><a href="login.php">Employee Log In</a></p>
     </div>
     <nav>
         <ul>

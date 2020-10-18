@@ -63,7 +63,12 @@ switch($action){
         // Send them to the admin view
         include '../view/loginLanding.php';
         exit;
+    break;
+    case 'login-redirect':
+        include '../view/login.php';
         break;
     default:
-    break;
-    }?>
+        include '../view/admin.php';
+
+    }
+    ?>
