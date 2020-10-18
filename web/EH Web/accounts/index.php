@@ -23,7 +23,7 @@ if ($action == NULL){
 }
 
 switch ($action) {
-    case 'Login':
+    case 'login':
         $userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
         $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
 
