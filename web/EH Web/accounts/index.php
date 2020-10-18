@@ -12,9 +12,9 @@ require_once '../models/accounts-model.php';
 //require_once '../library/functions.php';
 
 
-if(isset($_COOKIE['userId'])){
-     $cookieUserId = filter_input(INPUT_COOKIE, 'userId', FILTER_SANITIZE_STRING);
-    }
+// if(isset($_COOKIE['userId'])){
+//      $cookieUserId = filter_input(INPUT_COOKIE, 'userId', FILTER_SANITIZE_STRING);
+//     }
 
 
 $action = filter_input(INPUT_POST, 'action');
@@ -61,11 +61,11 @@ switch($action){
         // Store the array into the session
         $_SESSION['clientData'] = $clientData;
         // Send them to the admin view
-        include '../view/loginLanding.php';
+        include 'loginLanding.php';
         exit;
     break;
     case 'login-redirect':
-        include '../view/login.php';
+        include '/view/login.php';
         break;
     default:
         include '../view/login.php';
