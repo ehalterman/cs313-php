@@ -19,6 +19,13 @@ try {
 }
 
 $topics = $db->query('SELECT * FROM topic');
+
+$book = filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
+$chapter = filter_input(INPUT_POST, 'chapter', FILTER_SANITIZE_NUMBER_INT);
+$verse = filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_NUMBER_INT);
+$content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
+$topicInput = filter_input(INPUT_POST, 'topic[]', FILTER_SANITIZE_STRING);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,13 +36,13 @@ $topics = $db->query('SELECT * FROM topic');
     <title>Document</title>
     <style>
         label, input {
-            padding: 10px;
+            margin: 10px;
         }
     </style>
 </head>
 
 <body>
-    <form action="">
+    <form action="index.php" method="post">
         <label for="book">Book</label>
         <input type="text" id="book" name="book"></br>
         <label for="chapter">Chapter</label>
@@ -49,8 +56,7 @@ $topics = $db->query('SELECT * FROM topic');
             <input type="checkbox" name="topic[]" value="<?= $topic['id'] ?>">
             <label><?= $topic['name'] ?></label>
         <?php } ?>
-
-
+        <input type="submit" value="submit">
     </form>
 </body>
 
