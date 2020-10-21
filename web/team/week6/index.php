@@ -25,7 +25,7 @@ if (!empty($book)) {
     $chapter = filter_input(INPUT_POST, 'chapter', FILTER_SANITIZE_NUMBER_INT);
     $verse = filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_NUMBER_INT);
     $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
-    $topicInput = filter_input(INPUT_POST, 'topic[]', FILTER_SANITIZE_STRING);
+    $topicInput = filter_input(INPUT_POST, 'topic[]');
 
     echo ('hi' .$topicInput);
     die();
