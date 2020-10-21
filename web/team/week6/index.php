@@ -56,12 +56,12 @@ $stmt->bindValue(':content', $content, PDO::PARAM_STR);
         <label for="verse">Verse</label>
         <input type="number" id="verse" name="verse"></br>
         <label for="content">Content</label>
-        <textarea id="content" name="content"></textarea>
+        <textarea id="content" name="content"></textarea></br>
         <?php
         foreach ($topics as $topic) { ?>
             <input type="checkbox" name="topic[]" value="<?= $topic['id'] ?>">
             <label><?= $topic['name'] ?></label>
-        <?php } ?>
+        <?php } ?></br>
         <input type="submit" value="submit">
     </form>
 </body>
