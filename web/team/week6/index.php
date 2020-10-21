@@ -32,6 +32,10 @@ $stmt->bindValue(':book', $book, PDO::PARAM_STR);
 $stmt->bindValue(':chapter', $chapter, PDO::PARAM_INT);
 $stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
 $stmt->bindValue(':content', $content, PDO::PARAM_STR);
+$stmt->execute();
+
+//$scriptureId = $db->lastInsertId("scripture_id_seq");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
