@@ -26,6 +26,12 @@ $verse = filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_NUMBER_INT);
 $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
 $topicInput = filter_input(INPUT_POST, 'topic[]', FILTER_SANITIZE_STRING);
 
+
+$stmt = $db->prepare('INSERT INTO Scriptures (id, book, chapter, verse, content) VALUES (default, :book, :chapter, :verse, :content)');
+$stmt->bindValue(':book', $book, PDO::PARAM_STR);
+$stmt->bindValue(':chapter', $chapter, PDO::PARAM_INT);
+$stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
+$stmt->bindValue(':content', $content, PDO::PARAM_STR);
 ?>
 <!DOCTYPE html>
 <html lang="en">
