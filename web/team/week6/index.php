@@ -27,7 +27,7 @@ if (!empty($book)) {
     $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
     $topicInput = filter_input(INPUT_POST, 'topic[]', FILTER_SANITIZE_STRING);
 
-    echo $topicInput;
+    echo ('hi' .$topicInput);
     die();
     $stmt = $db->prepare('INSERT INTO Scriptures (id, book, chapter, verse, content) VALUES (default, :book, :chapter, :verse, :content)');
     $stmt->bindValue(':book', $book, PDO::PARAM_STR);
