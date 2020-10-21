@@ -32,11 +32,11 @@ $topics = $db->query('SELECT * FROM topic');
 <body>
     <form action="">
         <label for="book">Book</label>
-        <input type="text" id="book" name="book">
+        <input type="text" id="book" name="book"></br>
         <label for="chapter">Chapter</label>
-        <input type="number" id="chapter" name="chapter">
+        <input type="number" id="chapter" name="chapter"></br>
         <label for="verse">Verse</label>
-        <input type="number" id="verse" name="verse">
+        <input type="number" id="verse" name="verse"></br>
         <label for="content">Content</label>
         <textarea id="content" name="content"></textarea>
         <?php
