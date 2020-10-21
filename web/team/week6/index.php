@@ -21,6 +21,7 @@ try {
 $topics = $db->query('SELECT * FROM topic');
 
 $book = filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
+if (!empty ($book)){
 $chapter = filter_input(INPUT_POST, 'chapter', FILTER_SANITIZE_NUMBER_INT);
 $verse = filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_NUMBER_INT);
 $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
@@ -33,7 +34,7 @@ $stmt->bindValue(':chapter', $chapter, PDO::PARAM_INT);
 $stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
 $stmt->bindValue(':content', $content, PDO::PARAM_STR);
 $stmt->execute();
-
+}
 //$scriptureId = $db->lastInsertId("scripture_id_seq");
 
 ?>
