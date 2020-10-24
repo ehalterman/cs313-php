@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=BenchNine:wght@300&family=Rock+Salt&display=swap');
 #titleBlock{
-    background-color: #e3b3bf;
+    background-color: #ffe6ec;
     border-bottom: black 5px solid;
+    text-align: left;
 }
 h1{
     font-family: 'Rock Salt', cursive;
-    padding: 20px;
+    padding: 10px;
 }
 body{
     text-align: center;
@@ -28,11 +29,12 @@ li a {
     float: left;
     height: 500px;
     width: 20%;
-    background-color: #d97e94;
+    background-color: #ed919a;
     border-right: black 3px solid;
 }
 #midpinkblock{
-    background-color: #de9bab;
+    float: left;
+    background-color: #ffc4ca;
     height: 500px;
     width: 50px;
     border-right: black .5px solid;
