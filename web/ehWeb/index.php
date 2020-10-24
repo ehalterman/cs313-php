@@ -6,21 +6,27 @@
     <title>EH Web HomePage</title>
 </head>
 <body>
-    <header>
-    <h1>EH Web</h1>
-    <div class="login">
-        <p><a href='views/login.php'>Employee Log In</a></p>
-    </div>
+<header>
+    <div class="navigation">
     <nav>
         <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="https://intense-dusk-08315.herokuapp.com/ehWeb/clients/index.php?action=clientView'">Clients</a></li>
+            <li><a href="../index.php" id="current">Home</a></li>
+            <li><a href="clients.php">Clients</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
+            <li class="login"><a href="login.php">Employee Log In</a></li>
         </ul>
     </nav>
+    </div>
+    <div id="midpinkblock"></div>
+    <div id="titleBlock">
+    <h1>EH Web</h1>
+    </div>
     </header>
     <body>
+        <img src="images/fam.jpg" alt="Family Photo">
+        <p>Hi, I'm Elise! I'm a nerdy mom living near Salt Lake City.</p>
+        <p>I'd love to make your website dreams come true!</p>
     </body>
     <footer>
     </footer>

@@ -6,19 +6,19 @@
     <title>EH Web HomePage</title>
 </head>
 <body>
-    <header>
-    <h1>EH Web</h1>
-    <div class="login">
-        <p><a href='https://intense-dusk-08315.herokuapp.com/EH%20Web/accounts/index.php?action=login-redirect'>Employee Log In</a></p>
-    </div>
+<header>
+    <div class="navigation">
     <nav>
         <ul>
-            <li><a href="index.php">Home</a></li>
+            <li><a href="../index.php">Home</a></li>
             <li><a href="clients.php">Clients</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
+            <li class="login"><a href="login.php">Employee Log In</a></li>
         </ul>
     </nav>
+    </div>
+    <h1>EH Web</h1>
     </header>
     <body>
         <?php 

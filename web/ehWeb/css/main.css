@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=BenchNine:wght@300&family=Rock+Salt&display=swap');
+#titleBlock{
+    background-color: #ffd1e4;
+    border-bottom: black 5px solid;
+}
+h1{
+    font-family: 'BenchNine', sans-serif;
+}
+body{
+    font-family: 'Rock Salt', cursive;
+}
+li{
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px;
+}
+.navigation ul {
+    list-style: none;
+}
+.navigation{
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    background-color: #ff94c1;
+    border-right: black 3px solid;
+}
+#midpinkblock{
+    background-color: #ffb0d1;
+    height: 100%;
+    width: 5%;
+    border-right: black 1px solid;
+}

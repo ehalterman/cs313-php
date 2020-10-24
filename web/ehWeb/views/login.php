@@ -7,18 +7,18 @@
 </head>
 <body>
     <header>
-    <h1>EH Web</h1>
-    <div class="login">
-        <p><a href="login.php">Employee Log In</a></p>
-    </div>
+    <div class="navigation">
     <nav>
         <ul>
             <li><a href="../index.php">Home</a></li>
             <li><a href="clients.php">Clients</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
+            <li class="login"><a href="login.php">Employee Log In</a></li>
         </ul>
     </nav>
+    </div>
+    <h1>EH Web</h1>
     </header>
     <body>
     <?php

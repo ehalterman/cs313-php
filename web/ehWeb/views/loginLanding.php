@@ -6,19 +6,19 @@
     <title>EH Web HomePage</title>
 </head>
 <body>
-    <header>
-    <h1>EH Web</h1>
-    <div class="logOut">
-        <p><a href="#">Log Out</a></p>
-    </div>
+<header>
+    <div class="navigation">
     <nav>
         <ul>
             <li><a href="../index.php">Home</a></li>
             <li><a href="clients.php">Clients</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
+            <li class="logout"><a href="#">Log Out</a></li>
         </ul>
     </nav>
+    </div>
+    <h1>EH Web</h1>
     </header>
     <body>
     <p> Successful Login</p>
