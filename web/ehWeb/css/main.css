@@ -7,13 +7,15 @@
 h1{
     font-family: 'Rock Salt', cursive;
     padding: 10px;
-    margin-left: 20px;
+    margin-left: 27%;
 }
 body{
     text-align: center;
     font-family: 'BenchNine', sans-serif;
+    margin: 0;
 }
 li{
+    font-size: 24px;
     color: black;
     text-align: center;
     font-weight: bold;
@@ -44,4 +46,12 @@ li a {
 img{
     padding: 20px;
     max-width: 25%;
+}
+li a:hover{
+    text-decoration: underline;
+}
+#current{
+    border-left: black 1px solid;
+    border-right: black 1px solid;
+    padding: 5px;
 }
