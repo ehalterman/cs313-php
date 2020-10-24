@@ -19,7 +19,7 @@
         </ul>
     </nav>
     </div>
-    <div id="midpinkblock"></div>
+    <div id="midpinkblock"><p> </p></div>
     <div id="titleBlock">
     <h1>EH Web</h1>
     </div>
