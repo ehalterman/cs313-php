@@ -12,7 +12,7 @@
     <nav>
         <ul>
             <li><a href="../index.php">Home</a></li>
-            <li><a href="clients.php">Clients</a></li>
+            <li><a href="clients.php" id="current">Clients</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
             <li class="login"><a href="login.php">Employee Log In</a></li>
@@ -26,8 +26,21 @@
     </header>
     <body>
         <?php 
-        foreach ($clientData as $clientsData){
-            echo ('<p>'.$clientsData['firstname']);
+        $dbUrl = getenv('DATABASE_URL');
+    
+        $dbOpts = parse_url($dbUrl);
+      
+        $dbHost = $dbOpts["host"];
+        $dbPort = $dbOpts["port"];
+        $dbUser = $dbOpts["user"];
+        $dbPassword = $dbOpts["pass"];
+        $dbName = ltrim($dbOpts["path"],'/');
+      
+        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+      
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        foreach ($db->query('SELECT * FROM client') as $row){
+            echo ('<p>'.$row['firstname']);
         }
         ?>
     </body>
