@@ -19,7 +19,10 @@
         </ul>
     </nav>
     </div>
+    <div id="midpinkblock"><p> </p></div>
+    <div id="titleBlock">
     <h1>EH Web</h1>
+    </div>
     </header>
     <body>
     <p> Successful Login</p>
