@@ -5,16 +5,22 @@
 }
 h1{
     font-family: 'Rock Salt', cursive;
+    padding: 20px;
 }
 body{
+    text-align: center;
     font-family: 'BenchNine', sans-serif;
 }
 li{
+    text-align: center;
     font-weight: bold;
-    text-decoration: none;
     padding: 20px;
 }
+li a {
+    text-decoration: none;
+}
 .navigation ul {
+    text-align: center;
     list-style: none;
 }
 .navigation{
@@ -27,7 +33,7 @@ li{
 #midpinkblock{
     background-color: #de9bab;
     height: 100%;
-    width: 5%;
+    width: 50px;
     border-right: black .5px solid;
 }
 img{
