@@ -15,7 +15,7 @@
             <li><a href="clients.php">Clients</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
-            <li class="login"><a href="login.php">Employee Log In</a></li>
+            <li class="login"><a id="current" href="login.php">Employee Log In</a></li>
         </ul>
     </nav>
     </div>
@@ -33,7 +33,7 @@
         <label for="username">User Name:</label>
         <input type="text" id="username" name="username" required></br>
         <label for="userpassword">Password:</label>
-        <input type="password" id="userpassword" name="userpassword">
+        <input type="password" id="userpassword" name="userpassword"></br>
         <input type="submit" name="submit" id="signin">
         <input type="hidden" name="action" value="login">
     </form>
