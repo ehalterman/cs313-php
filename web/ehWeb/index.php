@@ -11,11 +11,11 @@
     <div class="navigation">
     <nav>
         <ul>
-            <li><a href="../index.php" id="current">Home</a></li>
-            <li><a href="clients.php">Clients</a></li>
+            <li><a href="index.php" id="current">Home</a></li>
+            <li><a href="views/clients.php">Clients</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
-            <li class="login"><a href="login.php">Employee Log In</a></li>
+            <li class="login"><a href="views/login.php">Employee Log In</a></li>
         </ul>
     </nav>
     </div>

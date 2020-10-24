@@ -48,7 +48,8 @@ img{
     max-width: 25%;
 }
 li a:hover{
-    text-decoration: underline;
+    border-bottom: black 1px solid;
+    padding: 5px;
 }
 #current{
     border-left: black 1px solid;
