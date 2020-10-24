@@ -7,6 +7,7 @@
 h1{
     font-family: 'Rock Salt', cursive;
     padding: 10px;
+    margin-left: 20px;
 }
 body{
     text-align: center;
@@ -19,6 +20,7 @@ li{
     padding: 20px;
 }
 li a {
+    color: black;
     text-decoration: none;
 }
 .navigation ul {
@@ -30,14 +32,14 @@ li a {
     height: 500px;
     width: 20%;
     background-color: #ed919a;
-    border-right: black 3px solid;
+    border-right: black .5px solid;
 }
 #midpinkblock{
     float: left;
     background-color: #ffc4ca;
     height: 500px;
     width: 50px;
-    border-right: black .5px solid;
+    border-right: black 3px solid;
 }
 img{
     padding: 20px;
