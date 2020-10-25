@@ -39,6 +39,17 @@ switch($action){
             exit; 
         }
         $clientOutcome = newClient($firstname, $lastname, $phone, $email);
+
+        if($clientOutcome === 1){
+            $_SESSION['message'] = "<p class='message'> Thanks you for adding a new client</p>";
+            header('Location: /ehWeb/views/clients.php');
+            exit;
+        } else{
+            $_SESSION['message'] = "<p class='message'> Sorry, there was an error</p>";
+            include '../view/addClient.php';
+            exit;
+        }
+    break;
     default:
         include 'clients.php';
 }
