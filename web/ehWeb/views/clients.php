@@ -42,7 +42,7 @@
         foreach ($db->query('SELECT * FROM client') as $row){
             echo ('<p>'.$row['firstname']);
         }
-        ?>
+        ?></br>
         <a href="addClient.php">Add New Client</a>
     </body>
     <footer>

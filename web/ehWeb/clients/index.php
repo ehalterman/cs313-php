@@ -22,7 +22,7 @@ if ($action == NULL){
     $action = filter_input(INPUT_GET, 'action');
 }
 
-switch($action){
+switch ($action) {
     case 'viewClient':
         getClient();
         include 'clients.php';
