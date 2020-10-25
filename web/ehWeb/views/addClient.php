@@ -25,7 +25,7 @@
     </div>
     </header>
     <body>
-        <form action="/ehweb/clients/index.php" method="post">
+        <form action="/clients/index.php" method="post">
             <label for="firstname">First Name:</label>
             <input type="text" id="firstname" name="firstname" required>
             <label for="lastname">Last Name:</label>
