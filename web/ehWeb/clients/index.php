@@ -27,6 +27,18 @@ switch($action){
         getClient();
         include 'clients.php';
     break;
+    case 'add-client':
+        $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);
+        $lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING);
+        $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_NUMBER_INT);
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+
+        if(empty($firstname) || empty($lastname) || empty($phone) || empty($email)){
+            $message = '<p class="message">Please provide information for all empty form fields.</p>';
+            include '../view/addClient.php';
+            exit; 
+        }
+        $clientOutcome = newClient($firstname, $lastname, $phone, $email);
     default:
         include 'clients.php';
 }

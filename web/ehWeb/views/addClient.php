@@ -25,25 +25,18 @@
     </div>
     </header>
     <body>
-        <?php 
-        $dbUrl = getenv('DATABASE_URL');
-    
-        $dbOpts = parse_url($dbUrl);
-      
-        $dbHost = $dbOpts["host"];
-        $dbPort = $dbOpts["port"];
-        $dbUser = $dbOpts["user"];
-        $dbPassword = $dbOpts["pass"];
-        $dbName = ltrim($dbOpts["path"],'/');
-      
-        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-      
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        foreach ($db->query('SELECT * FROM client') as $row){
-            echo ('<p>'.$row['firstname']);
-        }
-        ?>
-        <a href="addClient.php">Add New Client</a>
+        <form action="/ehweb/clients/index.php" method="post">
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" name="firstname" required>
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" required>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <input type="submit" name="submit" id="clientbtn" value="Add New Client">
+            <input type="hidden" name="action" value="add-client">
+        </form>
     </body>
     <footer>
     </footer>
