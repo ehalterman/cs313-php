@@ -12,9 +12,9 @@ require_once '../models/accounts-model.php';
 //require_once '../library/functions.php';
 
 
-// if(isset($_COOKIE['userId'])){
-//      $cookieUserId = filter_input(INPUT_COOKIE, 'userId', FILTER_SANITIZE_STRING);
-//     }
+ if(isset($_COOKIE['username'])){
+      $cookieusername= filter_input(INPUT_COOKIE, 'username', FILTER_SANITIZE_STRING);
+     }
 
 
 $action = filter_input(INPUT_POST, 'action');
@@ -57,15 +57,15 @@ switch($action){
         // Remove the password from the array
         // the array_pop function removes the last
         // element from an array
-        //array_pop($clientData);
+        array_pop($clientData);
         // Store the array into the session
         $_SESSION['clientData'] = $clientData;
         // Send them to the admin view
-        include 'loginLanding.php';
+        include '../view/loginLanding.php';
         exit;
     break;
     case 'login-redirect':
-        include '/view/login.php';
+        include '../view/login.php';
         break;
     default:
         include '../view/login.php';

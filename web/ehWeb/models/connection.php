@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 function phpConnection(){
     try
@@ -25,4 +25,5 @@ function phpConnection(){
       die();
     }
   }
+  phpConnection();
 ?>

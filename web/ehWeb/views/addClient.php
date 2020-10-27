@@ -24,7 +24,13 @@
     <h1>EH Web</h1>
     </div>
     </header>
-    <body>
+    <main>
+    <?php
+        if(isset($_SESSION['message'])) {
+            echo $_SESSION['message'];
+        }
+        ?>
+        <h1>Create a New Client</h1>
         <form action="/ehWeb/clients/index.php" method="post">
             <label for="firstname">First Name:</label>
             <input type="text" id="firstname" name="firstname" required></br>
@@ -37,7 +43,7 @@
             <input type="submit" name="submit" id="clientbtn" value="Add New Client">
             <input type="hidden" name="action" value="add-client">
         </form>
-    </body>
+</main>
     <footer>
     </footer>
 </body>
