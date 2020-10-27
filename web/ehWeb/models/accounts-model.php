@@ -1,6 +1,6 @@
 <?php
 
-function phpConnection(){
+function phpConnect(){
     try
     {
       $dbUrl = getenv('DATABASE_URL');
@@ -26,7 +26,7 @@ function phpConnection(){
   }
 
 function getUser($username){
-    $db = phpConnection();
+    $db = phpConnect();
     $sql = 'SELECT * FROM siteUser WHERE username = :username';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
@@ -37,7 +37,7 @@ function getUser($username){
    }
 
    function getClient(){
-    $db = phpConnection();
+    $db = phpConnect();
     $sql = 'SELECT * FROM client';
     $stmt = $db->prepare($sql);
     $stmt->execute();
@@ -47,7 +47,7 @@ function getUser($username){
    }
    
    function newClient($firstname, $lastname, $phone, $email){
-    $db = phpConnection();
+    $db = phpConnect();
     $sql = 'INSERT INTO client (firstname, lastname, phone, email) VALUES (:firstname, :lastname, :phone, :email)';
 
     $stmt = $db->prepare($sql);
