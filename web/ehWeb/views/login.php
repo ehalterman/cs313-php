@@ -29,7 +29,8 @@
         if(isset($_SESSION['message'])) {
             echo $_SESSION['message'];
         }
-        ?>    <form>
+        ?> 
+        <form action="/ehWeb/accounts/" method="post">
         <label for="username">User Name:</label>
         <input type="text" id="username" name="username" required></br>
         <label for="userpassword">Password:</label>
