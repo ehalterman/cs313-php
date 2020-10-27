@@ -48,7 +48,7 @@ function getUser($username){
    
    function newClient($firstname, $lastname, $phone, $email){
     $db = phpConnect();
-    $sql = 'INSERT INTO client (firstname, lastname, phone, email) VALUES (:firstname, :lastname, :phone, :email)';
+    $sql = 'INSERT INTO client (firstName, lastName, phone, email) VALUES (:firstname, :lastname, :phone, :email)';
 
     $stmt = $db->prepare($sql);
 
