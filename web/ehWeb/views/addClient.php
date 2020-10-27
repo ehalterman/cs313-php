@@ -31,7 +31,7 @@
         }
         ?>
         <h1>Create a New Client</h1>
-        <form action="/ehWeb/clients/index.php" method="post">
+        <form action="/ehWeb/clients/index.php?action=add-client" method="post">
             <label for="firstname">First Name:</label>
             <input type="text" id="firstname" name="firstname" required></br>
             <label for="lastname">Last Name:</label>
