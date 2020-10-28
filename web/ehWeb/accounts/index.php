@@ -37,18 +37,18 @@ switch($action){
         // If the hashes don't match create an error
         // and return to the login view
         if(!$hashCheck) {
-        $message = '<p class="notice">Please check your password and try again.</p>';
-        $_SESSION['message'] = $message;
+        //$message = '<p class="notice">Please check your password and try again.</p>';
+        //$_SESSION['message'] = $message;
         header('../views/clients.php');
         exit;
         }
         // A valid user exists, log them in
-        $_SESSION['loggedin'] = TRUE;
+        //$_SESSION['loggedin'] = TRUE;
         // Remove the password from the array
         // the array_pop function removes the last
         // element from an array
         // Store the array into the session
-        $_SESSION['clientData'] = $clientData;
+        //$_SESSION['clientData'] = $clientData;
         // Send them to the admin view
         header('../views/loginLanding.php');
         exit;
