@@ -31,7 +31,7 @@
             echo $_SESSION['message'];
         }
         ?>
-        <form action="/ehWeb/accounts/index.php" method="POST">
+        <form action="/ehWeb/accounts/index.php?action=add-user" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required></br>
             <label for="userpassword">New Password:</label>
