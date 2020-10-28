@@ -17,7 +17,6 @@ $db = phpConnection();
     <nav>
         <ul>
             <li><a href="index.php" id="current">Home</a></li>
-            <li><a href="views/clients.php">Clients</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
             <?php
