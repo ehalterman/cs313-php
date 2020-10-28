@@ -39,7 +39,7 @@ switch($action){
         if(!$hashCheck) {
         //$message = '<p class="notice">Please check your password and try again.</p>';
         //$_SESSION['message'] = $message;
-        header('../views/clients.php');
+        header('Location: ../views/clients.php');
         exit;
         }
         // A valid user exists, log them in
@@ -50,7 +50,7 @@ switch($action){
         // Store the array into the session
         //$_SESSION['clientData'] = $clientData;
         // Send them to the admin view
-        header('../views/loginLanding.php');
+        header('Location: ../views/loginLanding.php');
         exit;
     break;
     case 'login-redirect':
