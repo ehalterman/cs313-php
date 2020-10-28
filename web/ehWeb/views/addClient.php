@@ -2,6 +2,10 @@
 session_start();
 require "../models/connection.php";
 $db = phpConnection();
+
+if (($_SESSION['userData']['priveleges']) == "false"){
+    header('Location: login.php');
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">

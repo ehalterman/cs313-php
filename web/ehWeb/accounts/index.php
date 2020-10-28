@@ -48,7 +48,7 @@ switch($action){
         // the array_pop function removes the last
         // element from an array
         // Store the array into the session
-        $_SESSION['userData'] = $clientData;
+        $_SESSION['username'] = $username;
         // Send them to the admin view
         header('Location: ../views/loginLanding.php');
         exit;

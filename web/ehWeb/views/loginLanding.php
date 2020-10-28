@@ -2,6 +2,10 @@
 session_start();
 require "../models/connection.php";
 $db = phpConnection();
+
+if (!isset($_SESSION['loggedin'])){
+    header('Location: login.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +38,8 @@ $db = phpConnection();
     </header>
     <body>
     <?php 
-    if (isset ($_SESSION['userData'])){
-        echo '<h2>Hello' . $_SESSION['userData']['username'] . '</h2>';} ?>
+    if (isset ($_SESSION['username'])){
+        echo '<h2>Hello' . $_SESSION['username'] . '</h2>';} ?>
     </br>
     <a href="clients.php">Access Clients</a>
 

@@ -2,6 +2,10 @@
 session_start();
 require "../models/connection.php";
 $db = phpConnection();
+
+if (!isset($_SESSION['loggedin'])){
+    header('Location: login.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
