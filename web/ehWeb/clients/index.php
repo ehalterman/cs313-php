@@ -24,7 +24,14 @@ if ($action == NULL){
 
 switch ($action) {
     case 'viewClient':
-        getClient();
+        $db = phpConnection();
+        $sql = 'SELECT * FROM client';
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        $_SESSION['client'] = $clientData;
+
         include 'clients.php';
     break;
     case 'add-client':
