@@ -39,9 +39,14 @@ $db = phpConnection();
         foreach ($db->query('SELECT * FROM client') as $row){
             echo ('<p>'.$row['firstname'] . ' ' . $row['lastname']);
         }
-        ?></br>
-        <a href="addClient.php">Add New Client</a>
-        <a href="addUser.php">Add New User</a>
+        echo "</br>";
+        if (($_SESSION['userData']['priveleges']) == "true"){
+           echo "<a href='addClient.php'>Add New Client</a>
+           <a href='addUser.php'>Add New User</a>"; 
+        }
+        ?>
+        
+        
 
     </body>
     <footer>
