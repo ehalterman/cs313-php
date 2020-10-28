@@ -39,7 +39,7 @@ if (!isset($_SESSION['loggedin'])){
     <body>
     <?php 
     if (isset ($_SESSION['username'])){
-        echo '<h2>Hello' . $_SESSION['username'] . '</h2>';} ?>
+        echo '<h2>Hello ' . $_SESSION['username'] . '</h2>';} ?>
     </br>
     <a href="clients.php">Access Clients</a>
 
