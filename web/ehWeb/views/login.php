@@ -30,6 +30,12 @@ $db = phpConnection();
     </div>
     </header>
     <body>
+        <h1>Log In</h1>
+        <?php
+        if(isset($_SESSION['message'])) {
+            echo $_SESSION['message'];
+        }
+        ?>
         <form action="/ehWeb/accounts/" method="post">
         <label for="username">User Name:</label>
         <input type="text" id="username" name="username" required></br>

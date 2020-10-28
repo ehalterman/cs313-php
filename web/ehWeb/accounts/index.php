@@ -37,8 +37,8 @@ switch($action){
         // If the hashes don't match create an error
         // and return to the login view
         if(!$hashCheck) {
-        //$message = '<p class="notice">Please check your password and try again.</p>';
-        //$_SESSION['message'] = $message;
+        $message = '<p class="notice">Please check your password and try again.</p>';
+        $_SESSION['message'] = $message;
         header('Location: ../views/login.php');
         exit;
         }
