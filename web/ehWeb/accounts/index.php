@@ -25,7 +25,7 @@ switch($action){
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $userpassword = filter_input(INPUT_POST, 'userpassword', FILTER_SANITIZE_STRING);
 
-        $stmt = $db->prepare('SELECT userpassword, priveleges FROM siteuser WHERE username = :username');
+        $stmt = $db->prepare('SELECT * FROM siteuser WHERE username = :username');
         $stmt->bindValue(':username', $username);
         $stmt->execute();
         
