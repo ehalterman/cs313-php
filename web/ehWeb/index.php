@@ -22,9 +22,9 @@ $db = phpConnection();
             <li><a href="#">Contact</a></li>
             <?php
             if($_SESSION['loggedin']){
-                echo "<li class='logout'><a href='../accounts/index.php?action=logout'>Log Out</a></li>";
+                echo "<li class='logout'><a href='accounts/index.php?action=logout'>Log Out</a></li>";
             }else{
-            echo "<li class='login'><a href='login.php'>Employee Log In</a></li>"; } ?>
+            echo "<li class='login'><a href='views/login.php'>Employee Log In</a></li>"; } ?>
         </ul>
     </nav>
     </div>
