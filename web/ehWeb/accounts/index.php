@@ -4,19 +4,14 @@ session_start();
 
 //get database connection file
 require "../models/connection.php";
-$db = phpConnection();
 //get the PHP Motors model for use as needed
 //require_once '../model/main-model.php';
 //get the accounts model
-require_once '../models/accounts-model.php';
+//require_once '../models/accounts-model.php';
 // Get the functions library
 //require_once '../library/functions.php';
 
 
-
- if(isset($_COOKIE['username'])){
-      $cookieusername= filter_input(INPUT_COOKIE, 'username', FILTER_SANITIZE_STRING);
-     }
 
 
 $action = filter_input(INPUT_POST, 'action');
@@ -26,6 +21,7 @@ if ($action == NULL){
 
 switch($action){
     case 'login':
+        $db = phpConnection();
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $userpassword = filter_input(INPUT_POST, 'userpassword', FILTER_SANITIZE_STRING);
 
@@ -63,6 +59,7 @@ switch($action){
         include '../view/login.php';
         break;
     case 'add-user':
+        $db = phpConnection();
         $username = filter_input(INPUT_POST, 'username');
         $priveleges = filter_input(INPUT_POST, 'priveleges');
         $userpassword = filter_input(INPUT_POST, 'userpassword');
