@@ -1,3 +1,8 @@
+<?php
+session_start();
+require "../modesl/connection.php";
+$db = phpConnection();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,12 +31,7 @@
     </header>
     <main>
     <h1>Create a New User</h1>
-    <?php
-        if(isset($_SESSION['message'])) {
-            echo $_SESSION['message'];
-        }
-        ?>
-        <form action="/ehWeb/accounts/index.php?action=add-user" method="POST">
+        <form action="/ehWeb/accounts/index.php" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required></br>
             <label for="userpassword">New Password:</label>
@@ -42,8 +42,8 @@
             <label for="fpriveleges">False:</label>
             <input type="radio" id="fpriveleges" name="priveleges" value="false" required></br>
             
-            <input type="hidden" name="action" value="add-user">
             <input type="submit"  value="Create New User">
+            <input type="hidden" name="action" value="add-user">
         </form>
 </main>
     <footer>
