@@ -30,7 +30,7 @@ switch($action){
         $stmt->execute();
         
         $clientData = $stmt->fetch();
-        $hashCheck = password_verify(':userpassword', $clientData['userpassword']);
+        $hashCheck = password_verify($userpassword, $clientData['userpassword']);
         // Compare the password just submitted against
         // the hashed password for the matching client
 
@@ -39,7 +39,7 @@ switch($action){
         if(!$hashCheck) {
         //$message = '<p class="notice">Please check your password and try again.</p>';
         //$_SESSION['message'] = $message;
-        header('Location: ../views/clients.php');
+        header('Location: ../views/login.php');
         exit;
         }
         // A valid user exists, log them in
