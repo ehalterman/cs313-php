@@ -4,10 +4,12 @@
     border-bottom: black 5px solid;
     text-align: left;
 }
-h1{
-    font-family: 'Rock Salt', cursive;
+header h1{
     padding: 10px;
     margin-left: 27%;
+}
+h1, h2, h3 {
+    font-family: 'Rock Salt', cursive;
 }
 body{
     text-align: center;
@@ -62,4 +64,9 @@ input{
 form{
     margin: 20px;
     align-items: right;
+}
+#adminbox{
+    border: black 1px solid;
+    padding: 10px;
+    margin: 20px;
 }
