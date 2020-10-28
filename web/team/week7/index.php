@@ -33,8 +33,8 @@ switch ($action){
      
         $stmt->execute();
         $dbpass = $stmt-> fetch();
-        $stmt->closeCursor();
-        $hashcheck = password_verify($password, $dbpass['password']);
+        //$stmt->closeCursor();
+        $hashcheck = password_verify(':password', $dbpass['password']);
         
         if($hashcheck){
             //$_SESSION['username'] = $dbpass['username'];
