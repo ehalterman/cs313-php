@@ -3,7 +3,7 @@ session_start();
 require "../models/connection.php";
 $db = phpConnection();
 
-if (($_SESSION['userData']['priveleges']) == "false"){
+if (!($_SESSION['userData']['priveleges'])){
     header('Location: login.php');
  }
 ?>
