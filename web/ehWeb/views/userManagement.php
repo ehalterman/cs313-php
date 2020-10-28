@@ -3,8 +3,8 @@ session_start();
 require "../models/connection.php";
 $db = phpConnection();
 
-if (!isset($_SESSION['loggedin'])){
-    header('Location: login.php');
+if (!($_SESSION['userData']['priveleges'])){
+    header('Location: ../index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -38,13 +38,13 @@ if (!isset($_SESSION['loggedin'])){
     </header>
     <body>
         <?php 
-        foreach ($db->query('SELECT * FROM client') as $row){
-            echo ('<p>'.$row['firstname'] . ' ' . $row['lastname']);
+        foreach ($db->query('SELECT * FROM siteuser') as $row){
+            echo ('<p>'.$row['username']);
         }
         echo "</br>";
         if (($_SESSION['userData']['priveleges']) == "true"){
            echo "<div id='adminbox'><a href='addClient.php'>Add New Client</a></br>
-           <a href='userManagement.php'>User Management</a></div>"; 
+           <a href='addUser.php'>Add New User</a></div>"; 
         }
         ?>
         
