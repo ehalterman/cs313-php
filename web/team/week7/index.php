@@ -36,14 +36,12 @@ switch ($action){
         $stmt->closeCursor();
         $hashcheck = password_verify($password, $dbpass['password']);
         
-        if(!$hashcheck){
-            header('Location: sign-in.php');
-            exit;
-            break;
-        }
-        
-        $_SESSION['user_id'] = $dbpass['id'];
+        if($hashcheck){
+            $_SESSION['user_id'] = $dbpass['id'];
         header('Location: welcome.php');
+            die();
+        }
+        header('Location: sign-in.php');
         
         break;
 }
