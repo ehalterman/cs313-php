@@ -74,9 +74,24 @@ switch($action){
         header('Location: ../views/clients.php');
     
     break;
+    case 'delete-user':
+        $db = phpConnection();
+        $userid = filter_input(INPUT_POST, 'userid');
+        $username = filter_input(INPUT_POST, 'username');
+        $priveleges = filter_input(INPUT_POST, 'priveleges');
+        $userpassword = filter_input(INPUT_POST, 'userpassword');
+        
+        $stmt = $db->prepare('DELETE FROM siteuser WHERE userid = :userid');
+        $stmt->bindValue(':userid', $userid);
+        $stmt->execute();
+        $stmt->closeCursor();
+        header('Location: userManagement.php');
+
+    break;
     case 'logout':
         session_destroy();
         header('Location: /ehWeb/'); 
+    break;
     default:
     header('Location: ../views/login.php');
 
