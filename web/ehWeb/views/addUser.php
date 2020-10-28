@@ -31,19 +31,19 @@
             echo $_SESSION['message'];
         }
         ?>
-        <form action="/ehWeb/accounts/index.php" method="post">
+        <form action="/ehWeb/accounts/index.php" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required></br>
             <label for="userpassword">New Password:</label>
             <input type="text" id="userpassword" name="userpassword" required></br>
             <p>Admin:</p>
-            <input type="radio" id="tpriveleges" name="priveleges" value="true" required></br>
             <label for="tpriveleges">True:</label>
-            <input type="radio" id="fpriveleges" name="priveleges" value="false" required></br>
+            <input type="radio" id="tpriveleges" name="priveleges" value="true" required></br>
             <label for="fpriveleges">False:</label>
+            <input type="radio" id="fpriveleges" name="priveleges" value="false" required></br>
             
             <input type="hidden" name="action" value="add-user">
-            <input type="submit" name="submit" id="userbtn" value="Create New User">
+            <input type="submit"  value="Create New User">
         </form>
 </main>
     <footer>
