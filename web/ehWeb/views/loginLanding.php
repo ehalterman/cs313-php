@@ -33,7 +33,10 @@ $db = phpConnection();
     </div>
     </header>
     <body>
-    <h2>Hello <?php echo $_SESSION['userData']['username']; ?> </h2>
+    <?php 
+    if (isset ($_SESSION['userData'])){
+        echo '<h2>Hello' . $_SESSION['userData']['username'] . '</h2>';} ?>
+    </br>
     <a href="clients.php">Access Clients</a>
 
     </body>
