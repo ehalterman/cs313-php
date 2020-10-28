@@ -37,7 +37,7 @@ switch ($action){
         $hashcheck = password_verify($password, $dbpass['password']);
         
         if($hashcheck){
-            $_SESSION['user_id'] = $dbpass['id'];
+            $_SESSION['username'] = $dbpass['username'];
         header('Location: welcome.php');
             die();
         }
