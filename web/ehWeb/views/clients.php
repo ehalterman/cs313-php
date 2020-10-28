@@ -1,3 +1,8 @@
+<?php
+session_start();
+require "../models/connection.php";
+$db = phpConnection();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +17,6 @@
     <nav>
         <ul>
             <li><a href="../index.php">Home</a></li>
-            <li><a href="clients.php" id="current">Clients</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
             <?php

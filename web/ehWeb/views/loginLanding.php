@@ -17,7 +17,6 @@ $db = phpConnection();
     <nav>
         <ul>
             <li><a href="../index.php">Home</a></li>
-            <li><a href="clients.php">Clients</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
             <?php
@@ -34,8 +33,9 @@ $db = phpConnection();
     </div>
     </header>
     <body>
-    <p> Successful Login</p>
-    <?php echo($_SESSION['clientData']('userId'))?>
+    <h2>Hello <?php echo $_SESSION['userData']['username']; ?> </h2>
+    <a href="clients.php">Access Clients</a>
+
     </body>
     <footer>
     </footer>
