@@ -41,7 +41,9 @@ if (!isset($_SESSION['loggedin'])){
     if (isset ($_SESSION['username'])){
         echo '<h2>Hello ' . $_SESSION['username'] . '</h2>';} ?>
     </br>
+    <div class="adminbox">
     <a href="clients.php">Access Clients</a>
+    </div>
 
     </body>
     <footer>
