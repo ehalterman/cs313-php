@@ -34,8 +34,6 @@ $db = phpConnection();
     </header>
     <body>
         <?php 
-        require '../models/connection.php';
-        $db = phpConnection();
         foreach ($db->query('SELECT * FROM client') as $row){
             echo ('<p>'.$row['firstname'] . ' ' . $row['lastname']);
         }
