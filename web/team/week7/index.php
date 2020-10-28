@@ -28,7 +28,7 @@ switch ($action){
         $username = filter_input(INPUT_POST, 'username');
         $password = filter_input(INPUT_POST, 'password');
         
-        $stmt = $db->prepare('SELECT id, password FROM users WHERE username = :username;');
+        $stmt = $db->prepare('SELECT id, password FROM users WHERE username = :username');
         $stmt -> bindValue(':username', $username);
      
         $stmt->execute();
