@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <title>EH Web HomePage</title>
+    <title>EH Web Create User</title>
 </head>
 <body>
 <header>
@@ -30,18 +30,20 @@
             echo $_SESSION['message'];
         }
         ?>
-        <h1>Create a New Client</h1>
-        <form action="/ehWeb/clients/index.php" method="post">
-            <label for="firstname">First Name:</label>
-            <input type="text" id="firstname" name="firstname" required></br>
-            <label for="lastname">Last Name:</label>
-            <input type="text" id="lastname" name="lastname" required></br>
-            <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" required></br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required></br>
-            <input type="hidden" name="action" value="add-client">
-            <input type="submit" name="submit" id="clientbtn" value="Add New Client">
+        <h1>Create a New User</h1>
+        <form action="/ehWeb/accounts/index.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required></br>
+            <label for="userpassword">New Password:</label>
+            <input type="text" id="userpassword" name="userpassword" required></br>
+            <p>Admin:</p>
+            <input type="radio" id="tpriveleges" name="priveleges" value="true" required></br>
+            <label for="tpriveleges">True:</label>
+            <input type="radio" id="fpriveleges" name="priveleges" value="false" required></br>
+            <label for="fpriveleges">False:</label>
+            
+            <input type="hidden" name="action" value="add-user">
+            <input type="submit" name="submit" id="userbtn" value="Create New User">
         </form>
 </main>
     <footer>

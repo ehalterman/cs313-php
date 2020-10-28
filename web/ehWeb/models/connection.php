@@ -2,6 +2,7 @@
 //session_start();
 
 function phpConnection(){
+  $db = NULL;
     try
     {
       $dbUrl = getenv('DATABASE_URL');
@@ -24,6 +25,6 @@ function phpConnection(){
       echo ("failed");
       die();
     }
+  return $db;
   }
-  phpConnection();
 ?>

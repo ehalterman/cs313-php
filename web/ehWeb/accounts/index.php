@@ -3,13 +3,15 @@
 session_start();
 
 //get database connection file
-require_once '../models/connection.php';
+require "../models/connection.php";
+$db = phpConnection();
 //get the PHP Motors model for use as needed
 //require_once '../model/main-model.php';
 //get the accounts model
 require_once '../models/accounts-model.php';
 // Get the functions library
 //require_once '../library/functions.php';
+
 
 
  if(isset($_COOKIE['username'])){
@@ -27,29 +29,23 @@ switch($action){
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $userpassword = filter_input(INPUT_POST, 'userpassword', FILTER_SANITIZE_STRING);
 
-        // Run basic checks, return if errors
-        if (empty($username) || empty($userpassword)) {
-        $message = '<p class="notice">Please provide a valid username and password.</p>';
-        $_SESSION['message'] = $message;
-        include '../view/login.php';
-        exit;
-        }
+        $stmt = $db->prepare('SELECT userpassword, priveleges FROM siteuser WHERE username = :username');
+        $stmt->bindValue(':username', $username);
+        $stmt->execute();
         
-        // A valid password exists, proceed with the login process
-        // Query the client data based on the email address
-        $clientData = getUser($username);
+        $clientData = $stmt->fetch();
+        $hashCheck = password_verify(':userpassword', $clientData['userpassword']);
         // Compare the password just submitted against
         // the hashed password for the matching client
-        setcookie('username', $clientData['username'], strtotime('+1 year'), '/');
-        $cookieusername = $clientData['username'];
+        $_SESSION['username'] = $clientData['username'];
+        $_SESSION['priveleges'] = $clientData['priveleges'];
 
-        $hashCheck = password_verify($userpassword, $clientData['userpassword']);
         // If the hashes don't match create an error
         // and return to the login view
         if(!$hashCheck) {
         $message = '<p class="notice">Please check your password and try again.</p>';
         $_SESSION['message'] = $message;
-        include '../view/login.php';
+        header('../views/clients.php');
         exit;
         }
         // A valid user exists, log them in
@@ -57,18 +53,33 @@ switch($action){
         // Remove the password from the array
         // the array_pop function removes the last
         // element from an array
-        array_pop($clientData);
         // Store the array into the session
         $_SESSION['clientData'] = $clientData;
         // Send them to the admin view
-        include '../view/loginLanding.php';
+        header('../views/loginLanding.php');
         exit;
     break;
     case 'login-redirect':
         include '../view/login.php';
         break;
+    case 'add-user':
+        $username = filter_input(INPUT_POST, 'username');
+        $priveleges = filter_input(INPUT_POST, 'priveleges');
+        $userpassword = filter_input(INPUT_POST, 'userpassword');
+        $passwordhash = password_hash($userpassword, PASSWORD_DEFAULT);
+
+
+        $stmt = $db->prepare('INSERT INTO siteuser (username, userpassword, priveleges) VALUES (:username, :userpassword, :priveleges)');
+        $stmt->bindValue(':username', $username);
+        $stmt->bindValue(':userpassword', $passwordhash);
+        $stmt->bindValue(':priveleges', $priveleges);
+        $stmt->execute();
+        $stmt->closeCursor();
+        header('Location: ../views/clients.php');
+    
+    break;
     default:
-        include '../view/login.php';
+    header('Location: ../views/login.php');
 
     }
     ?>

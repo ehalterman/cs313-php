@@ -44,6 +44,8 @@
         }
         ?></br>
         <a href="addClient.php">Add New Client</a>
+        <a href="addUser.php">Add New User</a>
+
     </body>
     <footer>
     </footer>

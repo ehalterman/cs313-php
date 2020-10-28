@@ -1,32 +1,12 @@
 <?php
 
-function phpConnect(){
-    try
-    {
-      $dbUrl = getenv('DATABASE_URL');
-    
-      $dbOpts = parse_url($dbUrl);
-    
-      $dbHost = $dbOpts["host"];
-      $dbPort = $dbOpts["port"];
-      $dbUser = $dbOpts["user"];
-      $dbPassword = $dbOpts["pass"];
-      $dbName = ltrim($dbOpts["path"],'/');
-    
-      $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-    
-      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+session_start();
 
-    }
-    catch (PDOException $ex)
-    {
-      echo ("failed");
-      die();
-    }
-  }
+//get database connection file
+require '../models/connection.php';
 
 function getUser($username){
-    $db = phpConnect();
+    $db = phpConnection();
     $sql = 'SELECT * FROM siteUser WHERE username = :username';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
@@ -37,7 +17,7 @@ function getUser($username){
    }
 
    function getClient(){
-    $db = phpConnect();
+    $db = phpConnection();
     $sql = 'SELECT * FROM client';
     $stmt = $db->prepare($sql);
     $stmt->execute();
@@ -47,9 +27,8 @@ function getUser($username){
    }
    
    function newClient($firstname, $lastname, $phone, $email){
-    $db = phpConnect();
     $sql = 'INSERT INTO client (firstName, lastName, phone, email) VALUES (:firstname, :lastname, :phone, :email)';
-
+    $db = phpConnection();
     $stmt = $db->prepare($sql);
 
     $stmt->bindValue(':firstname', $firstname, PDO::PARAM_STR);
