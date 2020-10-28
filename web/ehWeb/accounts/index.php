@@ -85,7 +85,7 @@ switch($action){
         $stmt->bindValue(':userid', $userid);
         $stmt->execute();
         $stmt->closeCursor();
-        header('Location: userManagement.php');
+        header('Location: ../views/userManagement.php');
 
     break;
     case 'logout':
