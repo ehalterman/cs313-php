@@ -39,7 +39,7 @@ if (!($_SESSION['userData']['priveleges'])){
     <body>
         <?php 
         foreach ($db->query('SELECT * FROM siteuser') as $row){
-            echo ('<p>'.$row['username']);
+            echo ('<p>'.$row['username'] . '<a href="../accounts/index.php?action=delete-user">DELETE USER</a></p>');
         }
         echo "</br>";
         if (($_SESSION['userData']['priveleges']) == "true"){
