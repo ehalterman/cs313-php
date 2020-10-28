@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "../models/connection.php";
+require "models/connection.php";
 $db = phpConnection();
 ?>
 <!DOCTYPE html>
