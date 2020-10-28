@@ -1,3 +1,8 @@
+<?php
+session_start();
+require "../models/connection.php";
+$db = phpConnection();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,18 +30,13 @@
     </div>
     </header>
     <body>
-    <?php
-        if(isset($_SESSION['message'])) {
-            echo $_SESSION['message'];
-        }
-        ?> 
         <form action="/ehWeb/accounts/" method="post">
         <label for="username">User Name:</label>
         <input type="text" id="username" name="username" required></br>
         <label for="userpassword">Password:</label>
         <input type="password" id="userpassword" name="userpassword"></br>
-        <input type="submit" name="submit" id="signin">
-        <input type="hidden" name="action" value="login">
+        <input type="submit" name="submit" value="Sign In">
+        <input type="hidden" name="action" value="log-in">
     </form>
     </body>
     <footer>

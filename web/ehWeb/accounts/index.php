@@ -20,7 +20,7 @@ if ($action == NULL){
 }
 
 switch($action){
-    case 'login':
+    case 'log-in':
         $db = phpConnection();
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $userpassword = filter_input(INPUT_POST, 'userpassword', FILTER_SANITIZE_STRING);
