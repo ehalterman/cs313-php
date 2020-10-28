@@ -1,3 +1,8 @@
+<?php
+session_start();
+require "../models/connection.php";
+$db = phpConnection();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,13 +30,8 @@
     </div>
     </header>
     <main>
-    <?php
-        if(isset($_SESSION['message'])) {
-            echo $_SESSION['message'];
-        }
-        ?>
         <h1>Create a New Client</h1>
-        <form action="/ehWeb/clients/index.php?action=add-client" method="POST">
+        <form action="/ehWeb/clients/index.php" method="POST">
             <label for="firstname">First Name:</label>
             <input type="text" id="firstname" name="firstname" required></br>
             <label for="lastname">Last Name:</label>
@@ -40,8 +40,8 @@
             <input type="tel" id="phone" name="phone" required></br>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required></br>
-            <input type="hidden" name="action" value="add-client">
             <input type="submit" value="Add New Client">
+            <input type="hidden" name="action" value="add-client">
         </form>
 </main>
     <footer>

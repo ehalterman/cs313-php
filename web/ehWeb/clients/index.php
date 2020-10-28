@@ -7,7 +7,7 @@ require '../models/connection.php';
 //get the PHP Motors model for use as needed
 //require_once '../model/main-model.php';
 //get the accounts model
-require_once '../models/accounts-model.php';
+//require_once '../models/accounts-model.php';
 // Get the functions library
 //require_once '../library/functions.php';
 
@@ -35,27 +35,23 @@ switch ($action) {
         include 'clients.php';
     break;
     case 'add-client':
+        $db = phpConnection();
         $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);
         $lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING);
-        $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_NUMBER_INT);
+        $phone = filter_input(INPUT_POST, 'phone');
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 
-        if(empty($firstname) || empty($lastname) || empty($phone) || empty($email)){
-            $message = '<p class="message">Please provide information for all empty form fields.</p>';
-            include '../view/addClient.php';
-            exit; 
-        }
-        $clientOutcome = newClient($firstname, $lastname, $phone, $email);
-
-        if($clientOutcome === 1){
-            $_SESSION['message'] = "<p class='message'> Thanks you for adding a new client</p>";
-            header('Location: /ehWeb/views/clients.php');
-            exit;
-        } else{
-            $_SESSION['message'] = "<p class='message'> Sorry, there was an error</p>";
-            include '../view/addClient.php';
-            exit;
-        }
+        $sql = 'INSERT INTO client (firstname, lastname, phone, email) VALUES (:firstname, :lastname, :phone, :email)';
+        $stmt = $db->prepare($sql);
+    
+        $stmt->bindValue(':firstname', $firstname);
+        $stmt->bindValue(':lastname', $lastname);
+        $stmt->bindValue(':phone', $phone);
+        $stmt->bindValue(':email', $email);
+    
+        $stmt->execute();
+        $stmt->closeCursor();
+        header('Location: ../views/clients.php');
     break;
     default:
         include 'clients.php';
