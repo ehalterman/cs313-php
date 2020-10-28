@@ -1,3 +1,8 @@
+<?php
+session_start();
+require "../models/connection.php";
+$db = phpConnection();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +20,11 @@
             <li><a href="views/clients.php">Clients</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
-            <li class="login"><a href="views/login.php">Employee Log In</a></li>
+            <?php
+            if($_SESSION['loggedin']){
+                echo "<li class='logout'><a href='../accounts/index.php?action=logout'>Log Out</a></li>";
+            }else{
+            echo "<li class='login'><a href='login.php'>Employee Log In</a></li>"; } ?>
         </ul>
     </nav>
     </div>

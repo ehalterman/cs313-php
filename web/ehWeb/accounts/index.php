@@ -43,12 +43,12 @@ switch($action){
         exit;
         }
         // A valid user exists, log them in
-        //$_SESSION['loggedin'] = TRUE;
+        $_SESSION['loggedin'] = TRUE;
         // Remove the password from the array
         // the array_pop function removes the last
         // element from an array
         // Store the array into the session
-        //$_SESSION['clientData'] = $clientData;
+        $_SESSION['clientData'] = $clientData;
         // Send them to the admin view
         header('Location: ../views/loginLanding.php');
         exit;
@@ -73,6 +73,9 @@ switch($action){
         header('Location: ../views/clients.php');
     
     break;
+    case 'logout':
+        session_destroy();
+        header('Location: /ehWeb/'); 
     default:
     header('Location: ../views/login.php');
 
