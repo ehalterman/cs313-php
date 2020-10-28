@@ -33,8 +33,6 @@ switch($action){
         $hashCheck = password_verify(':userpassword', $clientData['userpassword']);
         // Compare the password just submitted against
         // the hashed password for the matching client
-        $_SESSION['username'] = $clientData['username'];
-        $_SESSION['priveleges'] = $clientData['priveleges'];
 
         // If the hashes don't match create an error
         // and return to the login view
