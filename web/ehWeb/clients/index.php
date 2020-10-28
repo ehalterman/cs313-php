@@ -4,7 +4,6 @@ session_start();
 
 //get database connection file
 require '../models/connection.php';
-$db = phpConnection();
 //get the PHP Motors model for use as needed
 //require_once '../model/main-model.php';
 //get the accounts model

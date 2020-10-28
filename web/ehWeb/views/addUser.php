@@ -25,12 +25,12 @@
     </div>
     </header>
     <main>
+    <h1>Create a New User</h1>
     <?php
         if(isset($_SESSION['message'])) {
             echo $_SESSION['message'];
         }
         ?>
-        <h1>Create a New User</h1>
         <form action="/ehWeb/accounts/index.php" method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required></br>
