@@ -74,6 +74,28 @@ switch($action){
         header('Location: ../views/clients.php');
     
     break;
+    case 'add-project':
+        $db = phpConnection();
+        $companyname = filter_input(INPUT_POST, 'companyname');
+        $siteurl = filter_input(INPUT_POST, 'siteurl');
+        $sitedescription = filter_input(INPUT_POST, 'sitedescription');
+        $totaldown = filter_input(INPUT_POST, 'totaldown');
+        $downpaid = filter_input(INPUT_POST, 'downpaid');
+        $totalcost = filter_input(INPUT_POST, 'totalcost');
+        $totalpaid = filter_input(INPUT_POST, 'totalpaid');
+        
+        $stmt = $db->prepare('INSERT INTO project (companyname, siteurl, sitedescription, totaldown, downpaid, totalcost, totalpaid) VALUES (:companyname, :siteurl, :sitedescription, :totaldown, :downpaid, :totalcost, :totalpaid)');
+        $stmt->bindValue(':companyname', $companyname);
+        $stmt->bindValue(':siteurl', $siteurl);
+        $stmt->bindValue(':sitedescription', $sitedescription);
+        $stmt->bindValue(':totaldown', $totaldown);
+        $stmt->bindValue(':downpaid', $downpaid);
+        $stmt->bindValue(':totalcost', $totalcost);
+        $stmt->bindValue(':totalpaid', $totalpaid);
+        $stmt->execute();
+        $stmt->closeCursor();
+        header('Location: ../views/clients.php');
+    break;    
     case 'delete-user':
         $db = phpConnection();
         $userid = filter_input(INPUT_POST, 'userid');

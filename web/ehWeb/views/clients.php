@@ -40,6 +40,9 @@ if (!isset($_SESSION['loggedin'])){
         <?php 
         foreach ($db->query('SELECT * FROM client') as $row){
             echo ('<p>'.$row['firstname'] . ' ' . $row['lastname']);
+            foreach($db->query('SELECT P.* FROM project P WHERE INNER JOIN client C ON C.projectid = P.projectid WHERE C.firstname = $firstname')as $project) {
+
+            }
         }
         echo "</br>";
         if (($_SESSION['userData']['priveleges']) == "true"){
