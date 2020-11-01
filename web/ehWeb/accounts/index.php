@@ -24,9 +24,11 @@ switch($action){
         $db = phpConnection();
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $userpassword = filter_input(INPUT_POST, 'userpassword', FILTER_SANITIZE_STRING);
+        $priveleges = filter_input(INPUT_POST, 'priveleges');
 
         $stmt = $db->prepare('SELECT * FROM siteuser WHERE username = :username');
         $stmt->bindValue(':username', $username);
+        $stmt->bindValue(':priveleges', $priveleges);
         $stmt->execute();
         
         $clientData = $stmt->fetch();
