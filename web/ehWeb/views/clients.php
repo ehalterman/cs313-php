@@ -40,12 +40,12 @@ if (!isset($_SESSION['loggedin'])){
         <?php 
         foreach ($db->query('SELECT * FROM client') as $row){
             echo ('<p>'.$row['firstname'] . ' ' . $row['lastname']);
-            foreach($db->query('SELECT P.* FROM project P WHERE INNER JOIN client C ON C.projectid = P.projectid WHERE C.firstname = $firstname')as $project) {
+            //foreach($db->query('SELECT P.* FROM project P WHERE INNER JOIN client C ON C.projectid = P.projectid WHERE ')as $project) {
 
             }
         }
         echo "</br>";
-        if (($_SESSION['userData']['priveleges'])){
+        if (($_SESSION['userData']['priveleges']) == "true"){
            echo "<div id='adminbox'><a href='addClient.php'>Add New Client</a></br>
            <a href='userManagement.php'>User Management</a></div>"; 
         }
