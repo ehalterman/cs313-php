@@ -28,7 +28,7 @@ switch($action){
 
         $stmt = $db->prepare('SELECT * FROM siteuser WHERE username = :username');
         $stmt->bindValue(':username', $username);
-        $stmt->bindValue(':priveleges', $priveleges);
+        //$stmt->bindValue(':priveleges', $priveleges);
         $stmt->execute();
         
         $clientData = $stmt->fetch();
