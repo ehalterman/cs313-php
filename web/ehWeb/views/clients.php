@@ -46,6 +46,7 @@ if (!isset($_SESSION['loggedin'])){
         echo "</br>";
         if (($_SESSION['userData']['priveleges']) == "true"){
            echo "<div id='adminbox'><a href='addClient.php'>Add New Client</a></br>
+           <a href='addProject.php'>Add New Project</a></br>
            <a href='userManagement.php'>User Management</a></div>"; 
         }
         ?>
