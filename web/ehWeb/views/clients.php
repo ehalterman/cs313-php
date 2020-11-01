@@ -45,7 +45,7 @@ if (!isset($_SESSION['loggedin'])){
             }
         }
         echo "</br>";
-        if (($_SESSION['userData']['priveleges']) == "true"){
+        if (($_SESSION['userData']['priveleges'])){
            echo "<div id='adminbox'><a href='addClient.php'>Add New Client</a></br>
            <a href='userManagement.php'>User Management</a></div>"; 
         }
